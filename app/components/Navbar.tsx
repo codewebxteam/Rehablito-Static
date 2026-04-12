@@ -9,7 +9,7 @@ const navLinks = [
   { name: "Services", href: "/services", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" },
   { name: "About", href: "/about", icon: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
   { name: "Blog", href: "/blog", icon: "M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m1 4l-3.5 3.5L8 11" },
-  { name: "Book", href: "/book", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
+  { name: "Book", href: "/booking", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
 ];
 
 export default function Navbar() {
@@ -17,11 +17,15 @@ export default function Navbar() {
   const [activeTab, setActiveTab] = useState(0);
   const { scrollY } = useScroll();
 
-  // Inverted Scroll Logic: Down = Show, Up = Hide
+  // Corrected Scroll Logic: Down = Hide, Up = Show
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
-    if (latest > previous) setIsVisible(true);
-    else setIsVisible(false);
+    // Hide when scrolling down, Show when scrolling up
+    if (latest > previous && latest > 150) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
   });
 
   return (
@@ -76,7 +80,7 @@ export default function Navbar() {
               </a>
               {/* Laptop Book Now Button */}
               <Link 
-                href="/book" 
+                href="/booking" 
                 className="hidden lg:block bg-[#1A2E44] text-white px-8 py-3 rounded-full font-black text-sm tracking-tight hover:shadow-2xl transition-all active:scale-95"
               >
                 Book Now
