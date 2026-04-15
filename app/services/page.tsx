@@ -58,14 +58,14 @@ export default function ServicesPage() {
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
               <Link 
-                href="/book" 
+                href="/booking" 
                 className="w-full sm:w-auto px-12 py-5 bg-[#1A2E44] text-white rounded-2xl font-black text-xs uppercase tracking-[0.3em] hover:bg-[#00AEEF] hover:shadow-2xl hover:-translate-y-1 transition-all active:scale-95"
               >
                 Book Free Consultation
               </Link>
               
               <a 
-                href="tel:8271586892" 
+                href="tel:92047 86220" 
                 className="w-full sm:w-auto px-12 py-5 bg-white border-2 border-slate-100 text-[#1A2E44] rounded-2xl font-black text-xs uppercase tracking-[0.3em] hover:border-[#00AEEF] hover:text-[#00AEEF] transition-all flex items-center justify-center gap-3"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>

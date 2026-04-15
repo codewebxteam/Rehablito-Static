@@ -66,7 +66,7 @@ export default function AboutPage() {
                 </Link>
                 
                 <Link 
-                  href="/book" 
+                  href="/booking" 
                   className="w-full sm:w-auto px-12 py-6 bg-transparent border border-white/10 text-white rounded-2xl font-black text-xs uppercase tracking-[0.3em] hover:bg-white/5 transition-all flex items-center justify-center gap-3"
                 >
                   Expert Consult

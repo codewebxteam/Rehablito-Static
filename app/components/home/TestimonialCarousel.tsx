@@ -55,15 +55,15 @@ export default function TestimonialCarousel() {
         </div>
       </div>
 
-      {/* --- NATIVE SMOOTH SCROLL CONTAINER --- */}
-      <div className="relative">
+      {/* --- NATIVE SMOOTH SCROLL CONTAINER (FIXED TOUCH EVENTS) --- */}
+      <div className="relative z-20">
         <div 
-          className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory no-scrollbar px-6 lg:px-20 gap-4 lg:gap-10 pb-10"
+          className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory no-scrollbar px-6 lg:px-20 gap-4 lg:gap-10 pb-10 overscroll-x-contain"
           style={{ 
             scrollbarWidth: 'none', 
             msOverflowStyle: 'none',
-            WebkitOverflowScrolling: 'touch', // Enable momentum scroll for iOS
-            touchAction: 'pan-x' // Prevents vertical jitter during horizontal scroll
+            WebkitOverflowScrolling: 'touch' // Enable momentum scroll for iOS
+            // touchAction: 'pan-x' hata diya gaya hai kyunki wo swipe block kar raha tha
           }}
         >
           {testimonials.map((t, index) => (
@@ -108,7 +108,7 @@ export default function TestimonialCarousel() {
       </div>
 
       {/* Trust Badge */}
-      <div className="mt-10 lg:mt-16 flex justify-center px-4">
+      <div className="mt-10 lg:mt-16 flex justify-center px-4 relative z-20">
         <div className="flex items-center gap-4 px-8 py-3 rounded-full bg-white/[0.03] border border-white/5 backdrop-blur-md">
             <div className="flex -space-x-2">
                 {[1,2,3].map(i => <div key={i} className="w-7 h-7 lg:w-8 lg:h-8 rounded-full border-2 border-[#0A0F1C] bg-slate-800" />)}

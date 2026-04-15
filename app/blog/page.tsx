@@ -53,14 +53,14 @@ export default function BlogPage() {
               {/* Action Buttons (Email Funda Removed) */}
               <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
                 <Link 
-                  href="/book" 
+                  href="/booking" 
                   className="w-full sm:w-auto px-12 py-6 bg-[#00AEEF] text-[#050A15] rounded-2xl font-black text-xs uppercase tracking-[0.3em] hover:bg-white hover:shadow-2xl transition-all active:scale-95"
                 >
                   Book Assessment
                 </Link>
                 
                 <a 
-                  href="https://wa.me/8271586892" 
+                  href="https://wa.me/9204786220" 
                   target="_blank"
                   className="w-full sm:w-auto px-12 py-6 bg-white/5 border border-white/10 text-white rounded-2xl font-black text-xs uppercase tracking-[0.3em] hover:bg-white/10 transition-all flex items-center justify-center gap-3"
                 >
