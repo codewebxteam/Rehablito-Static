@@ -37,7 +37,7 @@ const testimonials = [
 
 export default function TestimonialCarousel() {
   return (
-    <section className="relative py-16 lg:py-32 bg-[#0A0F1C] overflow-hidden font-plus-jakarta border-b border-white/5">
+    <section className="relative py-16 lg:py-32 bg-[#0A0F1C] overflow-x-hidden font-plus-jakarta border-b border-white/5">
       
       {/* Background Glows */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/5 blur-[150px] rounded-full pointer-events-none"></div>
@@ -55,15 +55,13 @@ export default function TestimonialCarousel() {
         </div>
       </div>
 
-      {/* --- NATIVE SMOOTH SCROLL CONTAINER (FIXED TOUCH EVENTS) --- */}
+      {/* --- NATIVE SMOOTH SCROLL CONTAINER (FIXED VERTICAL SCROLL) --- */}
       <div className="relative z-20">
         <div 
-          className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory no-scrollbar px-6 lg:px-20 gap-4 lg:gap-10 pb-10 overscroll-x-contain"
+          className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar px-6 lg:px-20 gap-4 lg:gap-10 pb-10"
           style={{ 
-            scrollbarWidth: 'none', 
-            msOverflowStyle: 'none',
-            WebkitOverflowScrolling: 'touch' // Enable momentum scroll for iOS
-            // touchAction: 'pan-x' hata diya gaya hai kyunki wo swipe block kar raha tha
+            WebkitOverflowScrolling: 'touch', // Momentum scroll for iOS
+            touchAction: 'pan-x pan-y' // Strictly tells browser to allow vertical page scrolling
           }}
         >
           {testimonials.map((t, index) => (
@@ -87,7 +85,7 @@ export default function TestimonialCarousel() {
 
                 <div className="flex items-center gap-4 lg:gap-6 border-t border-white/5 pt-7 lg:pt-10">
                   <div 
-                    className="w-12 h-12 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center font-black text-white text-lg lg:text-2xl"
+                    className="w-12 h-12 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center font-black text-white text-lg lg:text-2xl shrink-0"
                     style={{ backgroundColor: t.color, boxShadow: `0 8px 20px ${t.color}40` }}
                   >
                     {t.parent[0]}
