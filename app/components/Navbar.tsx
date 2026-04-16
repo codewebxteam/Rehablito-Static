@@ -18,7 +18,7 @@ export default function Navbar() {
   const pathname = usePathname(); // Get current active route
   const { scrollY } = useScroll();
 
-  // Corrected Scroll Logic: Down = Hide, Up = Show
+  // Corrected Scroll Logic: Down = Hide, Show when scrolling up
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
     // Hide when scrolling down, Show when scrolling up
@@ -39,21 +39,17 @@ export default function Navbar() {
         className="fixed top-4 lg:top-6 inset-x-0 z-[100] px-4 font-plus-jakarta"
       >
         <div className="max-w-7xl mx-auto">
-          <nav className="bg-white/90 backdrop-blur-xl border border-slate-100 shadow-xl rounded-full px-6 py-3 flex items-center justify-between">
+          <nav className="bg-white/90 backdrop-blur-xl border border-slate-100 shadow-xl rounded-[2rem] px-4 lg:px-6 py-2.5 flex items-center justify-between">
             {/* LOGO SECTION */}
-            <Link href="/" className="group">
-              <div className="text-2xl font-black tracking-tighter flex items-center">
-                {/* Yahan Logo Image Add Kiya Hai */}
-                <img src="/images/rehab-logo.png" alt="Rehablito Logo" className="w-8 h-8 mr-0 object-contain" />
-                <span className="text-[#ff0015]">R</span>
-                <span className="text-[#F28500]">e</span>
-                <span className="text-[#FFD700]">h</span>
-                <span className="text-[#8CBF3F]">a</span>
-                <span className="text-[#00AEEF]">b</span>
-                <span className="text-[#E91E63]">l</span>
-                <span className="text-[#6366F1]">i</span>
-                <span className="text-[#FFD700]">t</span>
-                <span className="text-[#FFD700]">o</span>
+            <Link href="/" className="group flex items-center">
+              <img src="/images/rehab-logo.png" alt="Rehablito Logo" className="w-9 h-9 lg:w-10 lg:h-10 mr-2.5 object-contain shrink-0" />
+              <div className="flex flex-col justify-center">
+                <span className="text-lg lg:text-2xl font-black tracking-tighter text-[#111111] leading-none">
+                  Rehablito
+                </span>
+                <span className="text-[8px] lg:text-[10px] font-bold text-[#8CBF3F] leading-none mt-1">
+                  Physio & Autism Center
+                </span>
               </div>
             </Link>
 
@@ -86,13 +82,13 @@ export default function Navbar() {
             </div>
 
             {/* ACTION BUTTONS */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 shrink-0">
               {/* Mobile Direct Call Dialer */}
               <a 
                 href="tel:8271586892" 
-                className="w-10 h-10 lg:hidden flex items-center justify-center bg-[#00AEEF] text-white rounded-full shadow-lg active:scale-90 transition-transform"
+                className="w-9 h-9 lg:hidden flex items-center justify-center bg-[#00AEEF] text-white rounded-full shadow-lg active:scale-90 transition-transform"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </a>

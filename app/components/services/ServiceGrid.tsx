@@ -15,7 +15,7 @@ const servicesData = [
     tag: "Behavioral"
   },
   {
-    title: "Speech",
+    title: "Speech & Language",
     desc: "Targeted interventions for verbal communication and language processing.",
     who: "Children with speech delays or articulation issues.",
     expect: "45-min play-based therapeutic modules.",
@@ -24,7 +24,7 @@ const servicesData = [
     tag: "Communication"
   },
   {
-    title: "Occupational",
+    title: "Occupational Therapy",
     desc: "Developing fine motor skills, sensory processing, and daily independence.",
     who: "Children with Sensory Processing Disorder or CP.",
     expect: "Hands-on sensory gym activities with experts.",
@@ -42,7 +42,7 @@ const servicesData = [
     tag: "Mobility"
   },
   {
-    title: "Special Edu",
+    title: "Special Education",
     desc: "Academic & cognitive support bridge for children with learning needs.",
     who: "Children with ADHD or learning disabilities.",
     expect: "1.5-hour customized academic coaching.",
@@ -58,13 +58,10 @@ export default function ServiceGrid() {
   return (
     <section className="bg-[#F8FAFC] py-16 lg:py-40 font-plus-jakarta relative overflow-hidden w-full">
       
-      {/* --- PREMIUM AMBIENT BACKGROUND --- */}
+      {/* --- PERFORMANCE OPTIMIZED BACKGROUND --- */}
+      {/* Removed Framer Motion X/Y animation on heavy blur. Replaced with cheap CSS opacity pulse. */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <motion.div 
-          animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
-          transition={{ duration: 20, repeat: Infinity }}
-          className="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-blue-100/40 blur-[150px] rounded-full"
-        />
+        <div className="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-blue-100/40 blur-[120px] rounded-full animate-pulse opacity-50" />
         <div className="absolute inset-0 opacity-[0.4]" style={{ backgroundImage: 'radial-gradient(#CBD5E1 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
       </div>
 
@@ -84,21 +81,20 @@ export default function ServiceGrid() {
         {/* --- MAIN GRID LAYOUT (Responsive) --- */}
         <div className="grid lg:grid-cols-12 gap-5 lg:gap-8 items-start w-full">
           
-          {/* Left: Interactive Navigation Pills (Horizontal on Mobile, Vertical on Desktop) */}
+          {/* Left: Interactive Navigation Pills */}
           <div className="lg:col-span-4 flex flex-col gap-2 w-full overflow-hidden">
              <div className="flex overflow-x-auto lg:flex-col gap-3 pb-3 lg:pb-0 snap-x snap-mandatory no-scrollbar w-full max-w-full">
                {servicesData.map((s, i) => (
                  <button
                    key={i}
                    onClick={() => setActiveTab(i)}
-                   className={`group relative flex items-center justify-between shrink-0 w-[160px] sm:w-[220px] lg:w-full lg:min-w-0 snap-center p-3.5 lg:px-10 lg:py-8 rounded-2xl lg:rounded-[2.5rem] text-left transition-all duration-500 outline-none overflow-hidden
+                   className={`group relative flex items-center justify-between shrink-0 w-[160px] sm:w-[220px] lg:w-full lg:min-w-0 snap-center p-3.5 lg:px-10 lg:py-8 rounded-2xl lg:rounded-[2.5rem] text-left transition-all duration-300 outline-none overflow-hidden
                    ${activeTab === i 
                      ? "bg-[#1A2E44] text-white shadow-lg lg:shadow-2xl lg:translate-x-4" 
                      : "bg-white text-slate-400 border border-slate-100 hover:border-blue-200 hover:text-[#1A2E44]"
                    }`}
                  >
                    <div className="flex items-center lg:items-start gap-3 relative z-10">
-                     {/* Mobile Color Dot */}
                      <div 
                          className={`lg:hidden w-2 h-2 rounded-full shrink-0 ${activeTab === i ? 'bg-white' : 'bg-slate-300'}`}
                          style={{ backgroundColor: activeTab === i ? '#FFF' : s.color }}
@@ -109,12 +105,10 @@ export default function ServiceGrid() {
                      </div>
                    </div>
                    
-                   {/* Desktop Arrow */}
                    <div className={`hidden lg:flex w-10 h-10 rounded-full border border-white/10 items-center justify-center transition-transform relative z-10 ${activeTab === i ? 'scale-100' : 'scale-0'}`}>
                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 5l7 7-7 7" /></svg>
                    </div>
 
-                   {/* Background ID Glow */}
                    {activeTab === i && (
                      <motion.div layoutId="service-hover-bg" className="absolute top-0 right-0 h-full w-1.5 lg:w-2 shadow-[0_0_40px_rgba(255,255,255,0.2)]" style={{ backgroundColor: s.color }} />
                    )}
@@ -123,26 +117,26 @@ export default function ServiceGrid() {
              </div>
           </div>
 
-          {/* Right: The Data Visualization Panel (Dynamic Card) */}
+          {/* Right: The Data Visualization Panel */}
           <div className="lg:col-span-8 w-full mt-1 lg:mt-0">
-            <div className="bg-white rounded-[2rem] lg:rounded-[4rem] border border-slate-100 p-6 sm:p-8 lg:p-20 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] h-full relative overflow-hidden flex flex-col justify-center">
+            <div className="bg-white rounded-[2rem] lg:rounded-[4rem] border border-slate-100 p-6 sm:p-8 lg:p-20 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] h-full relative overflow-hidden flex flex-col justify-center transform-gpu">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
-                  initial={{ opacity: 0, scale: 0.98, y: 15 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.98, y: -15 }}
-                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
                   className="relative z-10"
                 >
                   <div className="flex items-center gap-4 lg:gap-6 mb-6 lg:mb-12">
-                    <div className="h-1.5 lg:h-2 w-16 lg:w-24 rounded-full overflow-hidden bg-slate-100">
+                    <div className="h-1.5 lg:h-2 w-16 lg:w-24 rounded-full overflow-hidden bg-slate-100 transform-gpu">
                       <motion.div 
                         initial={{ width: 0 }} 
                         animate={{ width: "100%" }} 
                         className="h-full" 
                         style={{ backgroundColor: servicesData[activeTab].color }} 
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 0.4 }}
                       />
                     </div>
                     <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.4em] text-slate-400">Clinical Focus</span>
@@ -169,7 +163,7 @@ export default function ServiceGrid() {
 
                   <Link 
                     href="/booking" 
-                    className="mt-8 lg:mt-16 inline-flex px-8 py-4 lg:px-16 lg:py-6 bg-[#1A2E44] text-white rounded-xl lg:rounded-3xl font-black text-[10px] lg:text-xs uppercase tracking-[0.3em] hover:shadow-2xl hover:-translate-y-1 active:scale-95 transition-all w-full sm:w-auto justify-center"
+                    className="mt-8 lg:mt-16 inline-flex px-8 py-4 lg:px-16 lg:py-6 bg-[#1A2E44] text-white rounded-xl lg:rounded-3xl font-black text-[10px] lg:text-xs uppercase tracking-[0.3em] hover:shadow-2xl active:scale-95 transition-all w-full sm:w-auto justify-center"
                     style={{ boxShadow: `0 10px 30px -10px ${servicesData[activeTab].color}40` }}
                   >
                     Register Case
@@ -186,7 +180,6 @@ export default function ServiceGrid() {
         </div>
       </div>
 
-      {/* --- SCROLLBAR CSS --- */}
       <style jsx>{`
         .no-scrollbar::-webkit-scrollbar {
           display: none;

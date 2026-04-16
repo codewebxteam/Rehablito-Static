@@ -116,7 +116,11 @@ export default function HeroSection() {
             </div>
 
             <h1 className="text-4xl lg:text-7xl font-black text-[#1b6ba8] leading-tight lg:leading-[1.1] tracking-tighter mb-6">
-              <span style={{ WebkitTextStroke: '1.5px white' }}>
+              {/* FIX: Replaced WebkitTextStroke with Safe textShadow & explicit color */}
+              <span style={{ 
+                color: '#1b6ba8', 
+                textShadow: '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff' 
+              }}>
                 Care That Makes <br className="hidden lg:block" /> a
               </span>{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1B6CA8] to-[#00AEEF] animate-pulse font-black">

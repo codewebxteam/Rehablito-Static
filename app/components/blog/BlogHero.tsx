@@ -7,7 +7,7 @@ export default function BlogHero() {
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-[#050A15] overflow-hidden font-plus-jakarta">
       
       {/* --- CINEMATIC BG ELEMENTS --- */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      <div className="absolute inset-0 z-0 pointer-events-none transform-gpu">
         <motion.div 
           animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.1, 0.2] }}
           transition={{ duration: 15, repeat: Infinity }}
@@ -43,30 +43,10 @@ export default function BlogHero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-xl lg:text-3xl text-slate-400 font-medium leading-tight max-w-2xl border-l-4 border-[#00AEEF]/40 pl-8 mb-12"
+              className="text-xl lg:text-3xl text-slate-400 font-medium leading-tight max-w-2xl border-l-4 border-[#00AEEF]/40 pl-8 mb-12 lg:mb-0"
             >
               Exploring the intersection of <span className="text-white">evidence-based science</span> and neurodevelopmental growth.
             </motion.p>
-
-            {/* SEARCH CONSOLE */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="relative max-w-xl group"
-            >
-              <div className="absolute inset-0 bg-[#00AEEF]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative flex items-center bg-white/5 border border-white/10 rounded-2xl p-2 backdrop-blur-xl">
-                <input 
-                  type="text" 
-                  placeholder="Search articles, therapies, or news..." 
-                  className="bg-transparent border-none outline-none flex-1 px-6 text-white text-sm font-medium placeholder:text-slate-500"
-                />
-                <button className="bg-[#00AEEF] text-[#050A15] px-8 py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-white transition-colors">
-                  Find
-                </button>
-              </div>
-            </motion.div>
           </div>
 
           {/* RIGHT: TOPICS & STATS (Visible on Desktop) */}

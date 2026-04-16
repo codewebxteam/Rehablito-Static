@@ -47,7 +47,7 @@ export default function BlogGrid() {
              Latest <span className="text-slate-300 font-medium">Insights.</span>
            </h2>
            <div className="hidden lg:flex gap-2 text-slate-400 text-xs font-bold uppercase tracking-widest">
-              Swipe to explore <span className="animate-bounce-x">&rarr;</span>
+             Swipe to explore <span className="animate-bounce-x">&rarr;</span>
            </div>
         </div>
 
@@ -63,7 +63,8 @@ export default function BlogGrid() {
               transition={{ delay: i * 0.1 }}
               className="min-w-[85vw] md:min-w-[45vw] lg:min-w-0 snap-center group relative flex flex-col bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)] transition-all duration-500"
             >
-              <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-30" aria-label={post.title} />
+              {/* FIX: Changed href to "#" to prevent 404 errors until individual blog pages are built */}
+              <Link href="#" className="absolute inset-0 z-30" aria-label={post.title} />
 
               {/* Thumbnail Area */}
               <div className="aspect-[16/10] bg-slate-50 relative overflow-hidden">
