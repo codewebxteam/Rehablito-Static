@@ -4,22 +4,25 @@ import { motion } from "framer-motion";
 
 const founders = [
   { 
-    name: "Abhishek Chaudhary", 
-    role: "Co-Founder & MD", 
-    tag: "Strategy",
-    color: "#8CBF3F" // Green
+    name: "Dr Ramesh Kumar", 
+    role: "Director", 
+    tag: "Physiotherapist",
+    color: "#8CBF3F", // Green
+    image: "/images/F2.webp" // Ramesh
   },
   { 
-    name: "Amit Singh", 
-    role: "Co-Founder & CEO", 
+    name: "Vikash Singh", 
+    role: "Director", 
     tag: "Visionary",
-    color: "#00AEEF" // Sky Blue
+    color: "#00AEEF", // Sky Blue
+    image: "/images/F1.webp" // Vikash
   },
   { 
-    name: "Shivansh Diwedi", 
-    role: "Co-Founder & COO", 
-    tag: "Operations",
-    color: "#F28500" // Orange
+    name: "Dr Sachin Prabhat raj", 
+    role: "Director", 
+    tag: "Physiotherapist",
+    color: "#F28500", // Orange
+    image: "/images/F3.webp" // Sachin
   }
 ];
 
@@ -58,18 +61,20 @@ export default function MeetTheTeam() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.2, duration: 0.8 }}
-              className={`relative group ${i === 1 ? 'md:mb-12' : ''}`} // CEO card slightly higher
+              className={`relative group ${i === 1 ? 'md:mb-12' : ''}`} // Vikash (index 1) card slightly higher
             >
               {/* IMAGE CONTAINER (The Capsule) */}
               <div className="relative aspect-[4/5] rounded-[4rem] lg:rounded-[6rem] overflow-hidden bg-white/5 border border-white/10 transition-all duration-700 group-hover:border-white/30 group-hover:shadow-[0_40px_100px_-20px_rgba(0,174,239,0.2)]">
                 
-                {/* Image Placeholder / Gradient Overlay */}
+                {/* Image Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050A15] via-transparent to-transparent z-10" />
                 
-                {/* Static Placeholder for Founders Image */}
-                <div className="w-full h-full flex items-center justify-center text-white/10 italic font-black text-2xl uppercase tracking-tighter">
-                   Founder Image
-                </div>
+                {/* Founders Image */}
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
 
                 {/* Hover Glow Effect */}
                 <div 

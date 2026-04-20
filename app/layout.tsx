@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"; // Footer import kiya
+import WhatsAppWidget from "./components/WhatsAppWidget"; // Import added
 
 // Blueprint Page 10 ke hisaab se fonts setup [cite: 186]
 const plusJakarta = Plus_Jakarta_Sans({ 
@@ -40,6 +41,7 @@ export default function RootLayout({
 
         {/* Professional Footer jo har page ke bottom par dikhega */}
         <Footer />
+        <WhatsAppWidget />
       </body>
     </html>
   );

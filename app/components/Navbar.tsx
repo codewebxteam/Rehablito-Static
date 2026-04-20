@@ -42,7 +42,7 @@ export default function Navbar() {
           <nav className="bg-white/90 backdrop-blur-xl border border-slate-100 shadow-xl rounded-[2rem] px-4 lg:px-6 py-2.5 flex items-center justify-between">
             {/* LOGO SECTION */}
             <Link href="/" className="group flex items-center">
-              <img src="/images/rehab-logo.png" alt="Rehablito Logo" className="w-9 h-9 lg:w-10 lg:h-10 mr-2.5 object-contain shrink-0" />
+              <img src="/images/rehab-logo.webp" alt="Rehablito Logo" className="w-9 h-9 lg:w-10 lg:h-10 mr-2.5 object-contain shrink-0" />
               <div className="flex flex-col justify-center">
                 <span className="text-lg lg:text-2xl font-black tracking-tighter text-[#111111] leading-none">
                   Rehablito
