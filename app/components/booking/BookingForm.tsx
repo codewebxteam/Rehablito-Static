@@ -138,8 +138,10 @@ _Submitted securely via Rehablito Website._`;
                       </div>
                       <select required name="therapyType" value={formData.therapyType} onChange={handleChange} className="w-full appearance-none bg-slate-50/50 border border-slate-200 rounded-2xl pl-12 pr-10 py-4 outline-none focus:bg-white focus:border-[#00AEEF] focus:ring-4 focus:ring-[#00AEEF]/10 transition-all font-bold text-[#1A2E44] cursor-pointer">
                         <option value="" disabled>Select an option</option>
+                        <option value="Physiotherapy">Physiotherapy</option>
                         <option value="ABA Therapy">ABA Therapy</option>
                         <option value="Speech Therapy">Speech Therapy</option>
+                        <option value="Behaviour Therapy">Behaviour Therapy</option>
                         <option value="Occupational Therapy">Occupational Therapy</option>
                         <option value="Special Education">Special Education</option>
                         <option value="Not Sure / Assessment Needed">Not Sure / Assessment Needed</option>

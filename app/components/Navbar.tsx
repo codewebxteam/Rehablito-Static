@@ -85,7 +85,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4 shrink-0">
               {/* Mobile Direct Call Dialer */}
               <a 
-                href="tel:8271586892" 
+                href="tel:9204786220" 
                 className="w-9 h-9 lg:hidden flex items-center justify-center bg-[#00AEEF] text-white rounded-full shadow-lg active:scale-90 transition-transform"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
