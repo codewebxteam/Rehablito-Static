@@ -17,6 +17,13 @@ const supports = [
   { name: "FAQs", href: "/home" },
 ];
 
+// --- ADDED PORTALS LINKS ---
+const portals = [
+  { name: "Admin Login", href: "https://management.rehablito.com" },
+  { name: "Manager Login", href: "https://management.rehablito.com/manager/login" },
+  { name: "Staff Login", href: "https://management.rehablito.com/staff/login" },
+];
+
 // --- REAL SOCIAL LINKS ---
 const socialLinks = [
   { 
@@ -80,7 +87,8 @@ export default function Footer() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Next Available Slot: Today 4:00 PM</span>
+                {/* --- UPDATED WORKING TIME --- */}
+                <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Working Time: 9:00 AM - 7:00 PM</span>
               </div>
             </div>
 
@@ -92,8 +100,8 @@ export default function Footer() {
         </div>
 
         {/* --- MAIN FOOTER CONTENT --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
-          <div className="lg:col-span-5 space-y-8 text-center lg:text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
+          <div className="lg:col-span-4 space-y-8 text-center lg:text-left">
             <Link href="/" className="group inline-block">
               <div className="text-3xl font-black tracking-tighter flex items-center justify-center lg:justify-start">
                 <span className="text-[#E32636]">R</span>
@@ -109,7 +117,6 @@ export default function Footer() {
               Science-backed therapy for meaningful life changes. Leading Speech & Autism care in Uttar Pradesh.
             </p>
             
-            {/* UPDATED SOCIAL LINKS MAP */}
             <div className="flex gap-4 justify-center lg:justify-start">
               {socialLinks.map((item) => (
                 <a 
@@ -127,7 +134,9 @@ export default function Footer() {
 
           </div>
 
-          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12 text-center sm:text-left">
+          {/* Grid adjusted to 4 columns to perfectly fit the new Portals section */}
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
+            
             <div className="space-y-6">
               <h4 className="text-white font-black text-xs uppercase tracking-[0.3em] opacity-50">Our Expertise</h4>
               <ul className="space-y-4">
@@ -153,19 +162,33 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="col-span-2 md:col-span-1 space-y-6">
+            {/* --- NEW PORTALS SECTION --- */}
+            <div className="space-y-6 text-slate-500">
+              <h4 className="text-white font-black text-xs uppercase tracking-[0.3em] opacity-50">Portals</h4>
+              <ul className="space-y-4">
+                {portals.map(p => (
+                  <li key={p.name}>
+                    <a href={p.href} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-[#8CBF3F] transition-all text-sm font-bold flex items-center justify-center sm:justify-start gap-2">
+                      {p.name}
+                      <svg className="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-6">
               <h4 className="text-white font-black text-xs uppercase tracking-[0.3em] opacity-50">Contact Hub</h4>
               <div className="space-y-4">
-                {/* UPDATED PHONE NUMBER */}
-                <a href="tel:9204786220" className="text-2xl font-black text-white block hover:text-[#00AEEF] transition-all tracking-tighter leading-none">
+                <a href="tel:9204786220" className="text-xl md:text-2xl font-black text-white block hover:text-[#00AEEF] transition-all tracking-tighter leading-none">
                   +91 92047 86220
                 </a>
-                {/* UPDATED EMAIL ADDRESS */}
-                <a href="mailto:rehablito@gmail.com" className="text-xs font-bold uppercase tracking-widest text-[#00AEEF] hover:text-white transition-colors block">
+                <a href="mailto:rehablito@gmail.com" className="text-xs font-bold uppercase tracking-widest text-[#00AEEF] hover:text-white transition-colors block break-words">
                   rehablito@gmail.com
                 </a>
               </div>
             </div>
+
           </div>
         </div>
 
